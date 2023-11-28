@@ -1,0 +1,192 @@
+{
+   "widgets": [
+      {
+         "type": "chart",
+         "gridPos": {
+            "h": 6,
+            "w": 6,
+            "x": 0,
+            "y": 0
+         },
+         "series": [
+            {
+               "name": "AngleX",
+               "sourceNames": [
+                  "AngleX"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "AngleX",
+                  "stroke": "rgba(231,76,60,1)",
+                  "fill": "rgba(231,76,60,0.1)"
+               },
+               "type": "number"
+            },
+            {
+               "name": "AngleY",
+               "sourceNames": [
+                  "AngleY"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "AngleY",
+                  "stroke": "rgba(52,152,219,1)",
+                  "fill": "rgba(52,152,219,0.1)"
+               },
+               "type": "number"
+            },
+            {
+               "name": "AngleZ",
+               "sourceNames": [
+                  "AngleZ"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "AngleZ",
+                  "stroke": "rgba(46,204,113,1)",
+                  "fill": "rgba(46,204,113,0.1)"
+               },
+               "type": "number"
+            }
+         ]
+      },
+      {
+         "type": "chart",
+         "gridPos": {
+            "h": 6,
+            "w": 6,
+            "x": 0,
+            "y": 0
+         },
+         "series": [
+            {
+               "name": "AccX",
+               "sourceNames": [
+                  "AccX"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "AccX",
+                  "stroke": "rgba(231,76,60,1)",
+                  "fill": "rgba(231,76,60,0.1)"
+               },
+               "type": "number"
+            },
+            {
+               "name": "AccY",
+               "sourceNames": [
+                  "AccY"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "AccY",
+                  "stroke": "rgba(52,152,219,1)",
+                  "fill": "rgba(52,152,219,0.1)"
+               },
+               "type": "number"
+            },
+            {
+               "name": "AccZ",
+               "sourceNames": [
+                  "AccZ"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "AccZ",
+                  "stroke": "rgba(46,204,113,1)",
+                  "fill": "rgba(46,204,113,0.1)"
+               },
+               "type": "number"
+            }
+         ]
+      },
+      {
+         "type": "chart",
+         "gridPos": {
+            "h": 6,
+            "w": 6,
+            "x": 0,
+            "y": 0
+         },
+         "series": [
+            {
+               "name": "GyroX",
+               "sourceNames": [
+                  "GyroX"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "GyroX",
+                  "stroke": "rgba(231,76,60,1)",
+                  "fill": "rgba(231,76,60,0.1)"
+               },
+               "type": "number"
+            },
+            {
+               "name": "GyroY",
+               "sourceNames": [
+                  "GyroY"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "GyroY",
+                  "stroke": "rgba(52,152,219,1)",
+                  "fill": "rgba(52,152,219,0.1)"
+               },
+               "type": "number"
+            },
+            {
+               "name": "GyroZ",
+               "sourceNames": [
+                  "GyroZ"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "GyroZ",
+                  "stroke": "rgba(46,204,113,1)",
+                  "fill": "rgba(46,204,113,0.1)"
+               },
+               "type": "number"
+            }
+         ]
+      },
+      {
+         "type": "chart",
+         "gridPos": {
+            "h": 6,
+            "w": 6,
+            "x": 0,
+            "y": 0
+         },
+         "series": [
+            {
+               "name": "Roll",
+               "sourceNames": [
+                  "Roll"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "Roll",
+                  "stroke": "rgba(231,76,60,1)",
+                  "fill": "rgba(231,76,60,0.1)"
+               },
+               "type": "number"
+            },
+            {
+               "name": "Pitch",
+               "sourceNames": [
+                  "Pitch"
+               ],
+               "formula": "",
+               "options": {
+                  "_serie": "Pitch",
+                  "stroke": "rgba(52,152,219,1)",
+                  "fill": "rgba(52,152,219,0.1)"
+               },
+               "type": "number"
+            }
+         ]
+      }
+   ],
+   "viewDuration": "10"
+}
