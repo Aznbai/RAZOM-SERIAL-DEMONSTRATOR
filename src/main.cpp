@@ -43,7 +43,7 @@ void recalibrate()
     ledcWrite(PWMledChannel, i);
     delay(2);
   }
-  mpu.calcOffsets(); // gyro and accelero
+  mpu.calcOffsets(true, true); // gyro and accelero
   Serial.println("RECALIBRATION DONE");
 }
 void setup()
@@ -60,12 +60,16 @@ void setup()
 
   Wire.begin();
   // Wire.begin(18, 19); //UNCOMMENT IF  SECONDARY I2C PINS ARE USED. (SDA GPIO18 // SCL GPIO19)
-  byte status = mpu.begin();
+  byte status = mpu.begin(0, 0);
   Serial.print("MPU6050 status: ");
   Serial.println(status);
   while (status != 0)
   {
   } // stop everything if could not connect to MPU6050
+  recalibrate();
+  delay(250);
+  mpu.update();
+  delay(250);
   recalibrate();
 }
 
@@ -97,27 +101,31 @@ void loop()
     }
     recalibrate();
   }
-
   mpu.update();
-  int currTemp = mpu.getTemp();
 
-  int currAngleX = round(mpu.getAngleX()); // angle x;
-  int currAngleY = round(mpu.getAngleY()); // angle y;
-  int currAngleZ = round(mpu.getAngleZ()); // angle z;
-
-  int currAccX = round(mpu.getAccX() * 100); // acceleration x
-  int currAccY = round(mpu.getAccY() * 100); // acceleration y
-  int currAccZ = round(mpu.getAccZ() * 100); // acceleration z
-
-  int currGyroX = round(mpu.getGyroX() * 10); // gyro x
-  int currGyroY = round(mpu.getGyroY() * 10); // gyro y
-  int currGyroZ = round(mpu.getGyroZ() * 10); // gyro z
-
-  int currAccAngleX = round(mpu.getAccAngleX() * 10); // acc angle x
-  int currAccAngleY = round(mpu.getAccAngleY() * 10); // acc angle y
-
-  if ((millis() - timer) > 10)
+  if ((millis() - timer) > delayMillis)
   { // print data every 10ms
+
+    int currTemp = mpu.getTemp();
+
+    int currAngleX = constrain(round(mpu.getAngleX() * 12), -2000, 2000); // angle x;
+    int currAngleY = constrain(round(mpu.getAngleY() * 12), -2000, 2000); // angle y;
+    int currAngleZ = round(mpu.getAngleZ());                              // angle z;
+
+    // int currAccX = round(mpu.getAccX() * 325); // acceleration x factors: default mpu.begin values
+    // int currAccY = round(mpu.getAccY() * 325); // acceleration y factors: default mpu.begin values
+    // int currAccZ = round(mpu.getAccZ() * 227); // acceleration z factors: default mpu.begin values
+    int currAccX = constrain((mpu.getAccX() * 250), -1000, 1000); // acceleration x
+    int currAccY = constrain((mpu.getAccY() * 250), -1000, 1000); // acceleration y
+    int currAccZ = constrain((mpu.getAccZ() * 250), -1000, 1000); // acceleration z
+
+    int currGyroX = constrain(round(mpu.getGyroX() * 3.74), -1000, 1000); // gyro x
+    int currGyroY = constrain(round(mpu.getGyroY() * 3.74), -1000, 1000); // gyro y
+    int currGyroZ = constrain(round(mpu.getGyroZ() * 3.74), -1000, 1000); // gyro z
+
+    int currAccAngleX = constrain(round(mpu.getAccAngleX() * 5.5), -1000, 1000);  // acc angle x aka ROLL
+    int currAccAngleY = constrain(round(mpu.getAccAngleY() * 11.4), -1000, 1000); // acc angle y aka PITCH
+
     Serial.print(">AngleX: ");
     Serial.print(currAngleX);
     Serial.println();
