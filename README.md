@@ -9,4 +9,5 @@ This script has been tested successfully with both the ESP32-WROOM-DEVKIT-V1 and
 
 ### Read More:
 - https://razom.likhol.at
+- https://razom.likhol.at/make/craft-your-own-tools-razom-monitor
   
